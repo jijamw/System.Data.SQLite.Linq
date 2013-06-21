@@ -21,6 +21,7 @@
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <BuildPackage>true</BuildPackage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,8 +47,11 @@
     <AssemblyOriginatorKeyFile>System.Data.SQLite.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.0-beta1-20620\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.SQLite, Version=1.0.86.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
       <Private>True</Private>
       <HintPath>..\packages\System.Data.SQLite.x86.1.0.86.0\lib\net45\System.Data.SQLite.dll</HintPath>
@@ -93,7 +97,11 @@
     <EmbeddedResource Include="Resources\SQLiteProviderServices.ProviderManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App.config.transform" />
+    <Content Include="Web.config.transform" />
+    <None Include="install.ps1" />
     <None Include="packages.config" />
+    <None Include="System.Data.SQLite.Linq.nuspec" />
     <None Include="System.Data.SQLite.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
