@@ -1,0 +1,6 @@
+*.exe
+*.suo
+*.user
+[Bb]in
+[Oo]bj
+packages/
